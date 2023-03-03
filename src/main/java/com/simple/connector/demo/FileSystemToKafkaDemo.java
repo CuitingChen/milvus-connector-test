@@ -1,4 +1,4 @@
-package cn.ac.ict.connector.demo;
+package com.simple.connector.demo;
 
 import org.apache.flink.table.api.EnvironmentSettings;
 import org.apache.flink.table.api.TableEnvironment;

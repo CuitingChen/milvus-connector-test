@@ -1,8 +1,7 @@
-package cn.ac.ict.milvus;
+package com.simple.milvus;
 
-import cn.ac.ict.connector.demo.EnvConstant;
+import com.simple.connector.demo.EnvConstant;
 import io.milvus.client.MilvusServiceClient;
-import io.milvus.grpc.DataType;
 import io.milvus.grpc.DescribeCollectionResponse;
 import io.milvus.grpc.FlushResponse;
 import io.milvus.grpc.GetCollectionStatisticsResponse;
@@ -13,7 +12,6 @@ import io.milvus.param.collection.*;
 import io.milvus.response.DescCollResponseWrapper;
 import io.milvus.response.GetCollStatResponseWrapper;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class MilvusUtils {

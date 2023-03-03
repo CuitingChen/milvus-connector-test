@@ -1,13 +1,16 @@
 # milvus flink connector 测试说明
-## Milvus版本
+## Milvus Connector版本
 | 版本   | Milvus版本         | 发布时间         | 发布说明     |
 |------|------------------|--------------|----------|
+| 1.13| 2.2.3 Standalone|2023-03-03|批量Insert参数自定义|
+| 1.12| 2.2.3 Standalone|2023-03-03|批量Insert|
 | 1.11 | 2.1.0 Standalone | 2023-02-23   | Demo测试通过 |
 
 ## 测试模块
 
 |测试类|测试功能| 说明                        | 测试时间 |
 |---|---|---------------------------|------|
+|FileSystemToKafkaDemo|FilesSyste to Kafka| 测试从FileSystem中的数据写入Kafka|
 |FileSystemToMilvusDemo|FileSystem to Milvus| 测试从FileSystem中的数据写入Milvus |2022-02-23|
 
 ## 环境准备

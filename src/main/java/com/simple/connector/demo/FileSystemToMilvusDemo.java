@@ -1,6 +1,6 @@
-package cn.ac.ict.connector.demo;
+package com.simple.connector.demo;
 
-import cn.ac.ict.milvus.MilvusUtils;
+import com.simple.milvus.MilvusUtils;
 import io.milvus.grpc.DataType;
 import io.milvus.param.collection.FieldType;
 import org.apache.flink.table.api.EnvironmentSettings;

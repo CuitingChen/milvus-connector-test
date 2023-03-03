@@ -1,4 +1,4 @@
-package cn.ac.ict.connector.demo;
+package com.simple.connector.demo;
 
 public class EnvConstant {
     public static final String HOST = "10.60.1.132";

@@ -1,4 +1,4 @@
-package cn.ac.ict.connector.demo;
+package com.simple.connector.demo;
 
 import org.apache.flink.table.factories.Factory;
 import org.slf4j.Logger;

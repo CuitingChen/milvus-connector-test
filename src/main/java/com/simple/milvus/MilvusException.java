@@ -1,4 +1,4 @@
-package cn.ac.ict.milvus;
+package com.simple.milvus;
 
 import io.milvus.param.R;
 
