@@ -24,7 +24,7 @@
 
 ### 安装Milvus-connector
 #### 获取
-通过[实验室gitlab](http://10.60.1.90/contentanalysis/milvus-connector.git)获取项目代码
+通过[milvus项目](https://github.com/CuitingChen/flink-connector-milvus.git)获取项目代码
 #### 安装到本地仓库
 ```maven install```
 #### milvus-connector引入
