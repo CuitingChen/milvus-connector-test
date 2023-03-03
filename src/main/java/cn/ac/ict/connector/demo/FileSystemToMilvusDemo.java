@@ -64,7 +64,7 @@ public class FileSystemToMilvusDemo {
          * 确认collection 与flink talbe 创建是的collection一致！！！
          * ！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
          */
-        String collection = "test";
+        String collection = "test0303";
         createCollection(milvusUtils, collection);
 
         EnvironmentSettings settings = EnvironmentSettings
@@ -84,9 +84,11 @@ public class FileSystemToMilvusDemo {
         String sinkTable = "CREATE TABLE sinkTable " +
                 "( id BIGINT, title STRING , intro ARRAY<FLOAT> ) " +
                 "WITH ( 'connector' = 'milvus', " +
-                "'host' = '127.0.0.1', " +
+                "'host' = '10.60.1.132', " +
                 "'port'='19530', " +
-                "'collName' = 'test' )"; //!!!确认与创建的milvus collection一致！！！
+                "'collection' = '" + collection + "', " + //!!!确认与创建的milvus collection一致！！！
+                "'maxInsertCacheSize' = '2'," +
+                "'maxInsertCacheTimeInterval' = '10')";
         tableEnvironment.executeSql(sinkTable);
 
         tableEnvironment.executeSql("select * from sourceTable").print();
@@ -97,7 +99,7 @@ public class FileSystemToMilvusDemo {
                 "from sourceTable";
         tableEnvironment.executeSql(insertSql);
 
-        Thread.sleep(15000);
+        Thread.sleep(10000);
         /**
          * 验证数据写入milvus
          */

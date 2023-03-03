@@ -4,6 +4,7 @@ import cn.ac.ict.connector.demo.EnvConstant;
 import io.milvus.client.MilvusServiceClient;
 import io.milvus.grpc.DataType;
 import io.milvus.grpc.DescribeCollectionResponse;
+import io.milvus.grpc.FlushResponse;
 import io.milvus.grpc.GetCollectionStatisticsResponse;
 import io.milvus.param.ConnectParam;
 import io.milvus.param.R;
@@ -84,11 +85,21 @@ public class MilvusUtils {
         MilvusResponseUtils.checkResponse(response);
         return response.toString();
     }
+
+
     public long getCollectionRowCount(final String collectionName) {
+
+        FlushParam param = FlushParam.newBuilder()
+                .addCollectionName(collectionName).withSyncFlush(true)
+                .build();
+        R<FlushResponse> response = milvusServiceClient.flush(param);
+        MilvusResponseUtils.checkResponse(response);
+
         R<GetCollectionStatisticsResponse> respCollectionStatistics = milvusServiceClient.getCollectionStatistics(
                 // Return the statistics information of the collection.
                 GetCollectionStatisticsParam.newBuilder()
                         .withCollectionName(collectionName)
+                        .withFlush(true)
                         .build()
         );
         MilvusResponseUtils.checkResponse(respCollectionStatistics);
@@ -97,6 +108,7 @@ public class MilvusUtils {
             GetCollStatResponseWrapper wrapperCollectionStatistics = new GetCollStatResponseWrapper(respCollectionStatistics.getData());
             rowCount = wrapperCollectionStatistics.getRowCount();
         }
+
 
         return rowCount;
     }
