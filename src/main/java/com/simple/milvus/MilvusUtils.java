@@ -87,12 +87,6 @@ public class MilvusUtils {
 
     public long getCollectionRowCount(final String collectionName) {
 
-        FlushParam param = FlushParam.newBuilder()
-                .addCollectionName(collectionName).withSyncFlush(true)
-                .build();
-        R<FlushResponse> response = milvusServiceClient.flush(param);
-        MilvusResponseUtils.checkResponse(response);
-
         R<GetCollectionStatisticsResponse> respCollectionStatistics = milvusServiceClient.getCollectionStatistics(
                 // Return the statistics information of the collection.
                 GetCollectionStatisticsParam.newBuilder()

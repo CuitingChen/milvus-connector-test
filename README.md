@@ -27,13 +27,13 @@
 通过[实验室gitlab](http://10.60.1.90/contentanalysis/milvus-connector.git)获取项目代码
 #### 安装到本地仓库
 ```maven install```
-#### milvus-connector-test引入
+#### milvus-connector引入
 在项目`milvus-connector-test`中`pom.xml`引入或修改milvus-connector的依赖信息，示例如下：
 ```
 <dependency>
     <groupId>cn.ac.ict</groupId>
     <artifactId>milvus-connector</artifactId>
-    <version>1.11</version>
+    <version>1.13</version>
 </dependency>
 ```
 ## 测试运行
@@ -49,4 +49,3 @@
 6. 确认Collection中的条数
 ## 测试验证
 1. 通过MilvusTest确认Collection已写入条数
-2. //TODO通过MilvusTest查询已Insert的数据
